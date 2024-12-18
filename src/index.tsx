@@ -19,6 +19,7 @@ const ShareOnSocial = ({
   linkMetaDesc,
   linkFavicon,
   noReferer = false,
+  noNativeShare = false,
   onSocialClick = () => null,
 }: ShareOnSocialProps) => {
   const { onOpen, onClose, isOpen } = useDisclosure();
@@ -37,7 +38,7 @@ const ShareOnSocial = ({
   );
 
   const handleOnClick = async () => {
-    if (window.navigator.share) {
+    if (!noNativeShare && window.navigator.share) {
       try {
         await window.navigator.share({
           url: shareData.link,

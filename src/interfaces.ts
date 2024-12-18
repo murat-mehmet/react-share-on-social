@@ -13,6 +13,7 @@ export interface ShareOnSocialProps {
   openInWindow?: boolean;
   noReferer?: boolean;
   onSocialClick?: () => void;
+  noNativeShare?: boolean;
 }
 
 export interface ShareData {
